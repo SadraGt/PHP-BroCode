@@ -9,29 +9,32 @@
 <body>
   <div class="form-container">
     <form action="index.php" method="post">
-      <h2>Info</h2>
+      <h2>Circumference, Area, Volume</h2>
       <div class="form-group">
-        <label for="name">Name</label>
-        <input type="text" id="name" name="username" placeholder="Enter name" required>
-      </div>
-      <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" placeholder="Enter email" required>
-      </div>
-      <div class="form-group">
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" placeholder="Enter password" required>
-      </div>
+        <label for="name">Radius</label><br>
+        <input type="text" id="name" name="Radius" placeholder="Enter Radius" required><br>
+      </div><br>
       
-      <input type="submit" class="submit-btn" value="Log in">
-    </form>
+      
+      <input type="submit" class="submit-btn" value="Log in"><br>
+    </form><br>
   </div>
 </body>
 </html>
 
 
 <?php
-    echo $_POST["username"] . "<br>";
-    echo "{$_POST["email"]} <br>";
+$Radius = $_POST["Radius"] ?? 0 ;
+$Circumference = null;
+$Area = null;
+$Volume = null;
+echo "<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>";
 
+$Circumference = round(2 * pi() *$Radius , 2);
+$Area = round(pi() * pow($Radius,2) , 2);
+$Volume = round(4/3 * pi() *$Radius , 3);
+
+echo "Circumference =  {$Circumference} cm <br>";
+echo "Area = {$Area} cm <br>";
+echo "Volume = {$Volume} cm <br>";
 ?>
