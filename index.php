@@ -11,27 +11,27 @@
     <form action="index.php" method="post">
       <h2>Info</h2>
       <div class="form-group">
-        <label for="name">Name</label>
-        <input type="text" id="name" name="username" placeholder="Enter name" required>
-      </div>
-      <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" placeholder="Enter email" required>
-      </div>
-      <div class="form-group">
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" placeholder="Enter password" required>
-      </div>
+        <label for="name">Age</label><br>
+        <input type="text" id="name" name="Age" placeholder="Enter Your age" required><br>
+      </div><br>
       
-      <input type="submit" class="submit-btn" value="Log in">
-    </form>
+      
+      <input type="submit" class="submit-btn" value="Log in"><br>
+    </form><br>
   </div>
 </body>
 </html>
 
 
 <?php
-    echo $_POST["username"] . "<br>";
-    echo "{$_POST["email"]} <br>";
+$Age = $_POST["Age"] ?? 0 ;
+$Y = 18 - $Age;
+if ($Age >= 18) {
+  echo "your welcom";
+}elseif ($Age <= 0) {
+  echo "Error";
+}else {
+  echo "Try again in  $Y  years.";
+}
 
 ?>
