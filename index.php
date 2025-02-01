@@ -8,30 +8,81 @@
 </head>
 <body>
   <div class="form-container">
-    <form action="index.php" method="post">
-      <h2>Info</h2>
+    <form action="index.php" method="get">
+      <h2>Score</h2>
       <div class="form-group">
-        <label for="name">Name</label>
-        <input type="text" id="name" name="username" placeholder="Enter name" required>
-      </div>
-      <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" placeholder="Enter email" required>
-      </div>
-      <div class="form-group">
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" placeholder="Enter password" required>
-      </div>
+        <label for="name">grade</label><br>
+        <input type="text" id="name" name="Vari" placeholder="Enter Your grade (A,B,C)" required><br>
+      </div><br>
       
-      <input type="submit" class="submit-btn" value="Log in">
-    </form>
+      
+      <input type="submit" class="submit-btn" value="Log in"><br>
+    </form><br>
   </div>
 </body>
 </html>
 
 
 <?php
-    echo $_POST["username"] . "<br>";
-    echo "{$_POST["email"]} <br>";
+$Variable = $_GET["Vari"] ?? 0;
 
+switch ($Variable) {
+
+
+  case '+A' :
+    echo "your Excellent1 ";
+    break;
+
+  case 'A':
+    echo "your Excellent2 ";
+    break;
+
+  case '-A' :
+    echo "your Very Good";
+    break;
+
+  case '+B' :
+    echo "your Good";
+    break;
+
+  case 'B':
+    echo "your Good";
+    break;
+
+  case '-B' :
+    echo "your Above Average";
+    break;
+    
+  case '+C' :
+    echo "your Average";
+    break;
+
+  case 'C':
+    echo "your Average";
+    break;
+
+  case '-C' :
+    echo "your Below Average";
+    break;
+
+  case '+D' :
+    echo "your Poor";
+    break;
+
+  case 'D':
+    echo "your Barely Passing";
+    break;
+
+  case '-D' :
+    echo "your ↕ Fail";
+    break;
+    
+  case 'F':
+    echo "your Fail";
+    break;
+                 
+  default:
+    echo "Error";
+    break;
+}
 ?>
