@@ -18,10 +18,7 @@
         <label for="email">Email</label>
         <input type="email" id="email" name="email" placeholder="Enter email" required>
       </div>
-      <div class="form-group">
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" placeholder="Enter password" required>
-      </div>
+
       
       <input type="submit" class="submit-btn" value="Log in">
     </form>
@@ -31,7 +28,14 @@
 
 
 <?php
-    echo $_POST["username"] . "<br>";
-    echo "{$_POST["email"]} <br>";
 
+
+$Users = array(null=>null);
+$Users[$_POST["username"]] = $_POST["email"];
+
+foreach ($Users as $Kay => $Value ) {
+  echo $Kay . " <br> " . $Value . "<br>";
+}
+
+  
 ?>
