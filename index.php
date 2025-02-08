@@ -4,34 +4,44 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>info</title>
-  <link rel="stylesheet" href="styles.css">
+  <!-- <link rel="stylesheet" href="styles.css"> -->
 </head>
 <body>
-  <div class="form-container">
-    <form action="index.php" method="post">
-      <h2>Info</h2>
-      <div class="form-group">
-        <label for="name">Name</label>
-        <input type="text" id="name" name="username" placeholder="Enter name" required>
-      </div>
-      <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" placeholder="Enter email" required>
-      </div>
-      <div class="form-group">
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" placeholder="Enter password" required>
-      </div>
-      
-      <input type="submit" class="submit-btn" value="Log in">
-    </form>
-  </div>
+<!-- PaymentMethod in iran -->
+  <form action="index.php" method="post">
+    <input type="radio" name="PaymentMethod" value="Shaparak">Shaparak<br>
+    <input type="radio" name="PaymentMethod" value="Digipay">Digipay<br>
+    <input type="radio" name="PaymentMethod" value="Sadad">Sadad<br>
+    <input type="submit" name="Enter" value="Enter">
+
+  </form>
+
 </body>
 </html>
 
 
 <?php
-    echo $_POST["username"] . "<br>";
-    echo "{$_POST["email"]} <br>";
+$Value = $_POST["PaymentMethod"] ?? 0;
 
+if (isset($_POST["Enter"])) {
+  switch ($Value) {
+
+    case 'Shaparak':
+      echo "Shaparak";
+      break;
+    case 'Digipay':
+      echo "Digipay";
+      break;
+    case 'Sadad':
+      echo "Sadad";
+      break;
+    
+    default:
+      echo "Error";
+      break;
+  }
+}
+
+
+  
 ?>
