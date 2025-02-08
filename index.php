@@ -4,31 +4,45 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>info</title>
-  <link rel="stylesheet" href="styles.css">
+  <!-- <link rel="stylesheet" href="styles.css"> -->
 </head>
 <body>
-  <div class="form-container">
-    <form action="index.php" method="post">
-      <h2>Info</h2>
-      <div class="form-group">
-        <label for="name">Name</label>
-        <input type="text" id="name" name="username" placeholder="Enter name" required>
-      </div>
-      <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" placeholder="Enter email" required>
-      </div>
-      <div class="form-group">
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" placeholder="Enter password" required>
-      </div>
-      
-      <input type="submit" class="submit-btn" value="Log in">
-    </form>
-  </div>
+<!-- PaymentMethod in iran -->
+  <form action="index.php" method="post">
+    <input type="number" name="Number" placeholder="Enter a number">
+
+  </form>
+
 </body>
 </html>
+
+
 <?php
-    echo $_POST["username"] . "<br>";
-    echo "{$_POST["email"]} <br>";
+
+function prime_numbers($x){
+  $prime = true;
+  if($x == 1 || $x == 0){
+
+    $prime = false;
+
+  }else{
+
+    for ($i=2; $i < $x; $i++) { 
+      $z = $x % $i;
+      if($z == 0){
+        $prime = false;
+      }
+    }
+    
+  }
+  return $prime;
+}
+
+if(prime_numbers($_POST["Number"])){
+  echo "{$_POST["Number"]} is prime.";
+}else{
+  echo "{$_POST["Number"]} is not prime.";
+}
+
+  
 ?>
